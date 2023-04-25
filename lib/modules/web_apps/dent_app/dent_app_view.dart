@@ -14,7 +14,7 @@ class DentAppView extends StatelessWidget {
         children: [
           Image.asset(
             "assets/images/wav_dentcreatives.png",
-            width: 400,
+            width: 500,
           ),
           Card(
               child: Padding(

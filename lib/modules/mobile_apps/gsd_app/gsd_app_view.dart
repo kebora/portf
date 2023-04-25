@@ -13,52 +13,51 @@ class GSDAppView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Card(
-              color: Colors.amberAccent,
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                const Text(
+                  "GREEN SUN DIARY",
+                  style: TextStyle(
+                    fontSize: 50,
+                    color: Colors.white,
+                    fontFamily: "Montserrat",
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Text(
+                  gsdAppDescription,
+                  style: TextStyle(fontFamily: "Montserrat"),
+                ),
+                Row(
                   children: [
-                    const Text(
-                      "GREEN SUN DIARY",
-                      style: TextStyle(
-                        fontSize: 50,
-                        color: Colors.white,
-                        fontFamily: "Montserrat",
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Text(
-                      gsdAppDescription,
-                      style: TextStyle(fontFamily: "Montserrat"),
-                    ),
-                    Row(
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {},
-                          child: const Text("Project halted!"),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: [
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(FontAwesomeIcons.github),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(FontAwesomeIcons.googlePlay),
-                        ),
-                      ],
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Text("Project halted!"),
                     ),
                   ],
                 ),
-              )),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(FontAwesomeIcons.github),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(FontAwesomeIcons.googlePlay),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          )),
           Image.asset(
             "assets/images/mav_gsd.png",
             width: 300,

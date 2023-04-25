@@ -17,52 +17,51 @@ class FTubeAppView extends StatelessWidget {
             width: 300,
           ),
           Card(
-              color: Colors.amberAccent,
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                const Text(
+                  "FLUTTERTUBE",
+                  style: TextStyle(
+                    fontSize: 50,
+                    color: Colors.white,
+                    fontFamily: "Montserrat",
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Text(
+                  flutterTubeAppDescription,
+                  style: TextStyle(fontFamily: "Montserrat"),
+                ),
+                Row(
                   children: [
-                    const Text(
-                      "FLUTTERTUBE",
-                      style: TextStyle(
-                        fontSize: 50,
-                        color: Colors.white,
-                        fontFamily: "Montserrat",
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Text(
-                      flutterTubeAppDescription,
-                      style: TextStyle(fontFamily: "Montserrat"),
-                    ),
-                    Row(
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {},
-                          child: const Text("Project not receiving support!"),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: [
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(FontAwesomeIcons.github),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(FontAwesomeIcons.googlePlay),
-                        ),
-                      ],
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: const Text("Project not receiving support!"),
                     ),
                   ],
                 ),
-              )),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(FontAwesomeIcons.github),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(FontAwesomeIcons.googlePlay),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          )),
         ],
       ),
     );
