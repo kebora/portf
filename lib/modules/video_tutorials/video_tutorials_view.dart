@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portf/colors.dart';
 
 class VideoTutorialsView extends StatelessWidget {
   const VideoTutorialsView({super.key});
@@ -13,7 +14,7 @@ class VideoTutorialsView extends StatelessWidget {
             "Video Tutorials",
             style: TextStyle(
               fontSize: 90,
-              color: Colors.black26,
+              color: moduleTitle,
               fontFamily: "Montserrat",
             ),
           ),

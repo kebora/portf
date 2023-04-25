@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portf/colors.dart';
 
 class ArtsView extends StatelessWidget {
   const ArtsView({super.key});
@@ -13,7 +14,7 @@ class ArtsView extends StatelessWidget {
             "Arts",
             style: TextStyle(
               fontSize: 90,
-              color: Colors.black26,
+              color: moduleTitle,
               fontFamily: "Montserrat",
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portf/colors.dart';
 import 'package:portf/modules/web_apps/dent_app/dent_app_view.dart';
 import 'package:portf/modules/web_apps/portfolio_app/portfolio_app_view.dart';
 import 'package:text_divider/text_divider.dart';
@@ -16,7 +17,7 @@ class WebAppsView extends StatelessWidget {
             "Web Apps",
             style: TextStyle(
               fontSize: 90,
-              color: Colors.black26,
+              color: moduleTitle,
               fontFamily: "Montserrat",
             ),
           ),

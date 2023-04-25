@@ -17,66 +17,43 @@ class JoggingAppView extends StatelessWidget {
             width: 300,
           ),
           Card(
-              color: Colors.amberAccent,
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                const Text(
+                  "JOGGING APP",
+                  style: TextStyle(
+                    fontSize: 50,
+                    color: Colors.white,
+                    fontFamily: "Montserrat",
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Text(
+                  joggingAppDescription,
+                  style: TextStyle(fontFamily: "Montserrat"),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
                   children: [
-                    const Text(
-                      "JOGGING APP",
-                      style: TextStyle(
-                        fontSize: 50,
-                        color: Colors.white,
-                        fontFamily: "Montserrat",
-                      ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(FontAwesomeIcons.github),
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Text(
-                      joggingAppDescription,
-                      style: TextStyle(fontFamily: "Montserrat"),
-                    ),
-                    Row(
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {},
-                          child: const Text("Download Link #1"),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        ElevatedButton(
-                          onPressed: () {},
-                          child: const Text("Download Link #2"),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        ElevatedButton(
-                          onPressed: () {},
-                          child: const Text("Download Link #3"),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: [
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(FontAwesomeIcons.github),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(FontAwesomeIcons.googlePlay),
-                        ),
-                      ],
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(FontAwesomeIcons.googlePlay),
                     ),
                   ],
                 ),
-              )),
+              ],
+            ),
+          )),
         ],
       ),
     );

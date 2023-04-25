@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:portf/colors.dart';
 import 'package:portf/widgets/blocs/custom_chips_bloc.dart';
 
 class CustomChipPage extends StatelessWidget {
@@ -30,7 +31,7 @@ class CustomChipView extends StatelessWidget {
                     return Chip(
                       label: const Text("Mobile Apps"),
                       backgroundColor: state == ChipStates.mobileapp
-                          ? Colors.amberAccent
+                          ? chipColorDarkTheme
                           : null,
                     );
                   },
@@ -51,7 +52,7 @@ class CustomChipView extends StatelessWidget {
                     return Chip(
                       label: const Text("Companies"),
                       backgroundColor: state == ChipStates.companies
-                          ? Colors.amberAccent
+                          ? chipColorDarkTheme
                           : null,
                     );
                   },
@@ -72,7 +73,7 @@ class CustomChipView extends StatelessWidget {
                     return Chip(
                       label: const Text("Web Apps"),
                       backgroundColor: state == ChipStates.webapp
-                          ? Colors.amberAccent
+                          ? chipColorDarkTheme
                           : null,
                     );
                   },
@@ -93,7 +94,7 @@ class CustomChipView extends StatelessWidget {
                     return Chip(
                       label: const Text("Video Tutorials"),
                       backgroundColor: state == ChipStates.videoTutorials
-                          ? Colors.amberAccent
+                          ? chipColorDarkTheme
                           : null,
                     );
                   },
@@ -114,7 +115,7 @@ class CustomChipView extends StatelessWidget {
                     return Chip(
                       label: const Text("Articles"),
                       backgroundColor: state == ChipStates.articles
-                          ? Colors.amberAccent
+                          ? chipColorDarkTheme
                           : null,
                     );
                   },
@@ -135,7 +136,7 @@ class CustomChipView extends StatelessWidget {
                     return Chip(
                       label: const Text("Wired Logo Art"),
                       backgroundColor:
-                          state == ChipStates.art ? Colors.amberAccent : null,
+                          state == ChipStates.art ? chipColorDarkTheme : null,
                     );
                   },
                 ),
@@ -155,7 +156,7 @@ class CustomChipView extends StatelessWidget {
                     return Chip(
                       label: const Text("Contact Me"),
                       backgroundColor: state == ChipStates.contact
-                          ? Colors.amberAccent
+                          ? chipColorDarkTheme
                           : null,
                     );
                   },
@@ -176,7 +177,7 @@ class CustomChipView extends StatelessWidget {
                     return Chip(
                       label: const Text("Automation & APIs"),
                       backgroundColor: state == ChipStates.automation
-                          ? Colors.amberAccent
+                          ? chipColorDarkTheme
                           : null,
                     );
                   },
@@ -189,17 +190,6 @@ class CustomChipView extends StatelessWidget {
             const SizedBox(
               width: 20,
             ),
-            //Remove section incase we have no work in progress.
-            // MouseRegion(
-            //   cursor: SystemMouseCursors.click,
-            //   child: GestureDetector(
-            //     child: const Chip(
-            //       label: Text("Latest Project"),
-            //       backgroundColor: Colors.amberAccent,
-            //     ),
-            //     onTap: () {},
-            //   ),
-            // ),
           ],
         ),
       ),

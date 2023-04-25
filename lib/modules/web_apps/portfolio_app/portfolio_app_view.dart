@@ -13,41 +13,40 @@ class PortfolioAppView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Card(
-              color: Colors.amberAccent,
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                const Text(
+                  "OPEN PORTFOLIO",
+                  style: TextStyle(
+                    fontSize: 50,
+                    color: Colors.white,
+                    fontFamily: "Montserrat",
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Text(
+                  openPortfolio,
+                  style: TextStyle(fontFamily: "Montserrat"),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
                   children: [
-                    const Text(
-                      "OPEN PORTFOLIO",
-                      style: TextStyle(
-                        fontSize: 50,
-                        color: Colors.white,
-                        fontFamily: "Montserrat",
-                      ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(FontAwesomeIcons.github),
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Text(
-                      openPortfolio,
-                      style: TextStyle(fontFamily: "Montserrat"),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: [
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(FontAwesomeIcons.github),
-                        ),
-                        const Text("(MailChimp API used)"),
-                      ],
-                    ),
+                    const Text("(MailChimp API used)"),
                   ],
                 ),
-              )),
+              ],
+            ),
+          )),
           Image.asset(
             "assets/images/wav_portfolio.png",
             width: 400,

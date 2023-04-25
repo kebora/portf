@@ -17,40 +17,39 @@ class DentAppView extends StatelessWidget {
             width: 400,
           ),
           Card(
-              color: Colors.amberAccent,
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                const Text(
+                  "DENT CREATIVES",
+                  style: TextStyle(
+                    fontSize: 50,
+                    color: Colors.white,
+                    fontFamily: "Montserrat",
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Text(
+                  dentAppDescription,
+                  style: TextStyle(fontFamily: "Montserrat"),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
                   children: [
-                    const Text(
-                      "DENT CREATIVES",
-                      style: TextStyle(
-                        fontSize: 50,
-                        color: Colors.white,
-                        fontFamily: "Montserrat",
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Text(
-                      dentAppDescription,
-                      style: TextStyle(fontFamily: "Montserrat"),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: [
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(FontAwesomeIcons.github),
-                        ),
-                      ],
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(FontAwesomeIcons.github),
                     ),
                   ],
                 ),
-              )),
+              ],
+            ),
+          )),
         ],
       ),
     );

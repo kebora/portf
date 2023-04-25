@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portf/colors.dart';
 
 class AutomationView extends StatelessWidget {
   const AutomationView({super.key});
@@ -13,7 +14,7 @@ class AutomationView extends StatelessWidget {
             "Automation",
             style: TextStyle(
               fontSize: 90,
-              color: Colors.black26,
+              color: moduleTitle,
               fontFamily: "Montserrat",
             ),
           ),

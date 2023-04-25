@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portf/colors.dart';
 import 'package:portf/modules/mobile_apps/ftube_app/ftube_app_view.dart';
 import 'package:portf/modules/mobile_apps/gsd_app/gsd_app_view.dart';
 import 'package:portf/modules/mobile_apps/jogging_app/jogging_app_view.dart';
@@ -16,7 +17,7 @@ class MobileAppsView extends StatelessWidget {
             "Mobile Apps",
             style: TextStyle(
               fontSize: 90,
-              color: Colors.black26,
+              color: moduleTitle,
               fontFamily: "Montserrat",
             ),
           ),
