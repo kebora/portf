@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portf/colors.dart';
 
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:js' as js;
+
 const _appDescription = '''
 This is mostly the place I go to get a hint of what is happening around the World.\n
 This app implements the Rewarded ads and the News API. Check out the code.
@@ -12,6 +15,9 @@ const String _apkDownloadLink =
     "https://mega.nz/file/u6Y2BQjY#MhuA86DIU9trIGLkgtB54yEl9Uqothuf8t7eggVQD7w";
 
 ///
+///
+const String _githubLink = "https://github.com/kebora/news";
+
 class NewsAppView extends StatelessWidget {
   const NewsAppView({super.key});
 
@@ -52,11 +58,15 @@ class NewsAppView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            js.context.callMethod('open', [_githubLink]);
+                          },
                           icon: const Icon(FontAwesomeIcons.github),
                         ),
                         ElevatedButton.icon(
-                          onPressed: () {},
+                          onPressed: () {
+                            js.context.callMethod('open', [_apkDownloadLink]);
+                          },
                           icon: const Icon(Icons.download),
                           label: const Text("Download APK"),
                         )
