@@ -38,8 +38,13 @@
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
 </head>
 <body>
+  <script src="main.dart.js" type="application/javascript"></script>
+    <a id="triggerVideoPlayer" class="afterglow" href="#videoPlayer"></a>
+    <video id="videoPlayer" width="960" height="540" data-skin="dark">
+    </video>
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js

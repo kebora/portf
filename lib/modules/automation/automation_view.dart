@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portf/colors.dart';
+import 'package:portf/widgets/module_title_template.dart';
 
 class AutomationView extends StatelessWidget {
   const AutomationView({super.key});
@@ -10,14 +11,7 @@ class AutomationView extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            "Automation",
-            style: TextStyle(
-              fontSize: 90,
-              color: moduleTitle,
-              fontFamily: "Montserrat",
-            ),
-          ),
+          ModuleTitleTemplate(title: "Automation"),
         ],
       ),
     );

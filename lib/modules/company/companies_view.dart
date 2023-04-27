@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portf/colors.dart';
+import 'package:portf/widgets/module_title_template.dart';
 
 class CompaniesView extends StatelessWidget {
   const CompaniesView({super.key});
@@ -10,17 +10,7 @@ class CompaniesView extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text(
-            "Companies",
-            style: TextStyle(
-              fontSize: 90,
-              color: moduleTitle,
-              fontFamily: "Montserrat",
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
+          const ModuleTitleTemplate(title: "Companies"),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Stepper(steps: const [

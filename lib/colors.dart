@@ -6,3 +6,4 @@ const Color chipColorDarkTheme = Colors.white38;
 const Color moduleTitle = Colors.white38;
 
 //
+const cardBackgroundColor = Colors.white10;

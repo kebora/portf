@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portf/colors.dart';
+import 'package:portf/widgets/module_title_template.dart';
 
 class ContactView extends StatelessWidget {
   const ContactView({super.key});
@@ -10,14 +11,7 @@ class ContactView extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            "Contact",
-            style: TextStyle(
-              fontSize: 90,
-              color: moduleTitle,
-              fontFamily: "Montserrat",
-            ),
-          ),
+          ModuleTitleTemplate(title: "Contact"),
         ],
       ),
     );

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portf/projects_description.dart';
+import 'package:portf/colors.dart';
+
+const openPortfolio = '''
+This open portfolio also uses the MailChimp API to collect data from users.
+''';
 
 class PortfolioAppView extends StatelessWidget {
   const PortfolioAppView({super.key});
@@ -12,44 +16,48 @@ class PortfolioAppView extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Card(
-              child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                const Text(
-                  "OPEN PORTFOLIO",
-                  style: TextStyle(
-                    fontSize: 50,
-                    color: Colors.white,
-                    fontFamily: "Montserrat",
+          SizedBox(
+            width: MediaQuery.of(context).size.width / 2,
+            child: Card(
+                color: cardBackgroundColor,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      const Text(
+                        "OPEN PORTFOLIO",
+                        style: TextStyle(
+                          fontSize: 50,
+                          color: Colors.white,
+                          fontFamily: "Montserrat",
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Text(
+                        openPortfolio,
+                        style: TextStyle(fontFamily: "Montserrat"),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(FontAwesomeIcons.github),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const Text(
-                  openPortfolio,
-                  style: TextStyle(fontFamily: "Montserrat"),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(FontAwesomeIcons.github),
-                    ),
-                    const Text("(MailChimp API used)"),
-                  ],
-                ),
-              ],
-            ),
-          )),
+                )),
+          ),
           Image.asset(
             "assets/images/wav_portfolio.png",
-            width: 400,
+            width: 500,
           ),
         ],
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portf/colors.dart';
+import 'package:portf/widgets/module_title_template.dart';
 
 class ArtsView extends StatelessWidget {
   const ArtsView({super.key});
@@ -10,14 +11,7 @@ class ArtsView extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            "Arts",
-            style: TextStyle(
-              fontSize: 90,
-              color: moduleTitle,
-              fontFamily: "Montserrat",
-            ),
-          ),
+          ModuleTitleTemplate(title: "Arts"),
         ],
       ),
     );
