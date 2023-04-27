@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portf/colors.dart';
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:js' as js;
 
 const dentAppDescription = '''
 Henry asked me to create a web app for Dent design studio.\n
 This app is made on Django and uses Postgres DB.
 ''';
+const _githubLink = "https://github.com/kebora/dent-project";
 
 class DentAppView extends StatelessWidget {
   const DentAppView({super.key});
@@ -51,7 +54,9 @@ class DentAppView extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              js.context.callMethod('open', [_githubLink]);
+                            },
                             icon: const Icon(FontAwesomeIcons.github),
                           ),
                         ],

@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portf/colors.dart';
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:js' as js;
 
 const openPortfolio = '''
 This open portfolio also uses the MailChimp API to collect data from users.
 ''';
+// todo: upload project first
+const _githubLink = "";
 
+//
 class PortfolioAppView extends StatelessWidget {
   const PortfolioAppView({super.key});
 
@@ -46,7 +51,9 @@ class PortfolioAppView extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              js.context.callMethod('open', [_githubLink]);
+                            },
                             icon: const Icon(FontAwesomeIcons.github),
                           ),
                         ],
