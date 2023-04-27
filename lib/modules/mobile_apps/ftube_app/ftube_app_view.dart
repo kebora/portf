@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portf/colors.dart';
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:js' as js;
 
 const flutterTubeAppDescription = '''
 This app uses the YouTube API to pick flutter content from 3 different channels I like.\n
 This is cool, but could be much better. 
 ''';
+const String _githubLink = "https://github.com/kebora/fluttertube";
+const String _playstoreLink =
+    "https://play.google.com/store/apps/details?id=com.simiyu.fluttertube";
 
 class FTubeAppView extends StatelessWidget {
   const FTubeAppView({super.key});
@@ -30,7 +35,7 @@ class FTubeAppView extends StatelessWidget {
                   child: Column(
                     children: [
                       const Text(
-                        "FLUTTERTUBE",
+                        "FlutterTube",
                         style: TextStyle(
                           fontSize: 50,
                           color: Colors.white,
@@ -60,11 +65,15 @@ class FTubeAppView extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              js.context.callMethod('open', [_githubLink]);
+                            },
                             icon: const Icon(FontAwesomeIcons.github),
                           ),
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              js.context.callMethod('open', [_playstoreLink]);
+                            },
                             icon: const Icon(FontAwesomeIcons.googlePlay),
                           ),
                         ],
