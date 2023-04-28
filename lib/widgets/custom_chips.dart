@@ -134,7 +134,7 @@ class CustomChipView extends StatelessWidget {
                 child: BlocBuilder<CustomChipsBloc, ChipStates>(
                   builder: (context, state) {
                     return Chip(
-                      label: const Text("Wired Logo Art"),
+                      label: const Text("Wired Art"),
                       backgroundColor:
                           state == ChipStates.art ? chipColorDarkTheme : null,
                     );

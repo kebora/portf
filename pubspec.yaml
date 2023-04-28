@@ -37,6 +37,7 @@ dependencies:
   font_awesome_flutter: ^10.4.0
   get: ^4.6.5
   particles_fly: ^0.0.8
+  rive: ^0.10.4
   text_divider: ^1.0.0
   universal_html: ^2.2.1
   url_launcher: ^6.1.10
