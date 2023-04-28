@@ -8,7 +8,8 @@ const openPortfolio = '''
 This open portfolio also uses the MailChimp API to collect data from users.
 ''';
 // todo: upload project first
-const _githubLink = "";
+const _githubLink =
+    "https://github.com/danielmsd1/opp/tree/main/portfolio-project";
 
 //
 class PortfolioAppView extends StatelessWidget {
