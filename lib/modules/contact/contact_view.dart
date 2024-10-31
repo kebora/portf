@@ -1,9 +1,10 @@
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:js' as js;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portf/colors.dart';
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:js' as js;
 import 'package:portf/widgets/module_title_template.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -23,7 +24,7 @@ class ContactView extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                "As humans try to establish contact with the aliens, at least try to establish one with me first!",
+                "KENYAN",
               ),
             ),
           ),
@@ -51,7 +52,7 @@ class ContactView extends StatelessWidget {
                   label: "Playstore",
                   iconData: FontAwesomeIcons.googlePlay,
                   link:
-                      "https://play.google.com/store/apps/dev?id=5239150853407780991"),
+                      "https://play.google.com/store/apps/dev?id=6015300182985046723"),
               SizedBox(
                 width: 20,
               ),
@@ -81,16 +82,16 @@ class ContactView extends StatelessWidget {
               const SizedBox(
                 width: 20,
               ),
-              const _ContactButton(
-                  label: "Twitter",
-                  iconData: FontAwesomeIcons.twitter,
-                  link: "https://twitter.com/danilosimiyu"),
-              const SizedBox(
-                width: 20,
-              ),
+              // const _ContactButton(
+              //     label: "Twitter",
+              //     iconData: FontAwesomeIcons.twitter,
+              //     link: "https://twitter.com/danilosimiyu"),
+              // const SizedBox(
+              //   width: 20,
+              // ),
               ElevatedButton.icon(
                 onPressed: () async {
-                  const mailUrl = 'mailto:dsimiyu362@gmail.com';
+                  const mailUrl = 'mailto:danielmsimiyu71@gmail.com';
                   try {
                     // ignore: deprecated_member_use
                     await launch(mailUrl);

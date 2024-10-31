@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:portf/colors.dart';
-import 'package:portf/widgets/module_title_template.dart';
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:js' as js;
+
+import 'package:flutter/material.dart';
+import 'package:portf/widgets/module_title_template.dart';
 
 class ArticlesView extends StatelessWidget {
   const ArticlesView({super.key});
@@ -14,6 +14,16 @@ class ArticlesView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ModuleTitleTemplate(title: "Articles"),
+          _AView(
+            title: "OpenCV configuration on Android project",
+            link:
+                "https://medium.com/@danilosimiyu/opencv-configuration-on-android-project-882068a20fcf",
+          ),
+          _AView(
+            title: "When to use Camera2 over OpenCV",
+            link:
+                "https://medium.com/@danilosimiyu/when-to-use-camera2-over-opencv-904a46e4d456",
+          ),
           _AView(
             title: "Upload keystore file",
             link:

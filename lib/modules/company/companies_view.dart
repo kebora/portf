@@ -1,10 +1,9 @@
-import 'dart:js_util';
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:js' as js;
 
 import 'package:flutter/material.dart';
 import 'package:portf/colors.dart';
 import 'package:portf/widgets/module_title_template.dart';
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:js' as js;
 
 class CompaniesView extends StatelessWidget {
   const CompaniesView({super.key});
@@ -17,22 +16,28 @@ class CompaniesView extends StatelessWidget {
         children: [
           ModuleTitleTemplate(title: "Workplaces"),
           _CompanyLabelWithButton(
+            companyName: "RoyalTech Computers LTD (IT Intern, Nairobi)",
+            companyDescription:
+                "Henry Adeeya and Kennedy Kigen are awesome, they taught me a lot of things. Oh, they also gave me an opportunity of testing and improving their laravel website!",
+            companyBtnLink: "https://royaltech.co.ke/",
+          ),
+          _CompanyLabelWithButton(
             companyName:
                 "TL Technologies Company PVT LTD (Front end/Flutter developer, India)",
             companyDescription:
-                "I mainly worked as a front-end web developer. A great place to work definitely. Shoutout to Sangi (Founder). She is an amazing mentor",
+                "Mainly worked as a front-end web developer. A great place. Shoutout to Sangi (Founder). She is an amazing mentor.",
             companyBtnLink: "https://ams.tsobriargrove.org/",
           ),
           _CompanyLabel(
             companyName: "TP Trust (Volunteer, Nairobi)",
             companyDescription:
-                "I had a lot of fun teaching kids how to code in Javascript using Scratch. My stay was brief as I got a contract with TL after just a few weeks in, but memory isn't.",
+                "Had a lot of fun teaching kids how to code in Javascript using Scratch. My stay was brief as I got a contract with TL after just a few weeks in, but memory isn't.",
           ),
           _CompanyLabelWithButton(
             companyName:
                 "iPoint Technologies (Software developer intern, Nairobi)",
             companyDescription:
-                "In the first meeting, I was asked whether I had ever heard of Felix Angelov/bloc. It was not funny at the time, but in retrospect, I laugh so hard. A very great place to work.\nThis is the place that really made me love flutter.",
+                "A very great place to work. This is the place that really made me love flutter.",
             companyBtnLink:
                 "https://play.google.com/store/apps/details?id=com.ipoint.mizpah",
           ),
