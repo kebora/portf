@@ -13,7 +13,8 @@ Check out a more detailed description in GitHub link / test out the APK (Don't f
 ''';
 
 const String _githubLink = "https://github.com/kebora/Ishara";
-const String _playstoreLink = "";
+const String _playstoreLink =
+    "https://play.google.com/apps/internaltest/4701559001780237625";
 
 class IsharaAppView extends StatelessWidget {
   const IsharaAppView({super.key});

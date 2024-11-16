@@ -5,9 +5,7 @@ import 'package:portf/widgets/paint_clock_module.dart';
 
 const String sescDescription = '''
 I also draw. \n
-2d art is my soft spot. I also like 3D and have tried out some models using Blender. If you need custom made art for anything, be it logo, illustration or even yourself. I can deliver!
-
-I mostly use these tools: Blender 3D, Inkscape, Davinci Resolve and some websites like Pixlr for finer touch.\n
+2d art is my soft spot. I also like 3D and have tried out some work on Blender. If you need custom made art for anything, be it logo, illustration or even yourself. I can deliver!
 ''';
 
 class SescView extends StatelessWidget {
