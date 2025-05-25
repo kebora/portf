@@ -6,12 +6,13 @@ class ModuleTitleTemplate extends StatelessWidget {
   final String title;
   @override
   Widget build(BuildContext context) {
+    final bool isMobile = MediaQuery.of(context).size.width < 600;
     return Column(
       children: [
         Text(
           title,
-          style: const TextStyle(
-            fontSize: 90,
+          style: TextStyle(
+            fontSize: isMobile ? 35.0 : 90.0,
             color: moduleTitle,
             fontFamily: "Montserrat",
           ),

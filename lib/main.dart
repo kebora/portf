@@ -6,6 +6,7 @@ import 'package:portf/modules/arts/arts_view.dart';
 import 'package:portf/modules/automation/automation_view.dart';
 import 'package:portf/modules/desktop_apps/companies_view.dart';
 import 'package:portf/modules/contact/contact_view.dart';
+import 'package:portf/modules/graphics/graphics_view.dart';
 import 'package:portf/modules/mobile_apps/mobile_apps_view.dart';
 import 'package:portf/modules/video_tutorials/video_tutorials_view.dart';
 import 'package:portf/modules/web_apps/web_apps_view.dart';
@@ -68,9 +69,11 @@ class HomePage extends StatelessWidget {
                                 ? const AutomationView()
                                 : state == ChipStates.art
                                     ? const ArtsView()
-                                    : state == ChipStates.contact
-                                        ? const ContactView()
-                                        : const CompaniesView();
+                                    : state == ChipStates.graphics
+                                        ? GraphicsView()
+                                        : state == ChipStates.contact
+                                            ? const ContactView()
+                                            : const CompaniesView();
           }),
         ],
       ),

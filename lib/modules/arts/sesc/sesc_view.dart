@@ -13,70 +13,127 @@ class SescView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            "assets/images/sesc.png",
-            width: 300,
-          ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width / 2,
-            child: Card(
-                color: cardBackgroundColor,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      const Text(
-                        "2D Art & Animations",
-                        style: TextStyle(
-                          fontSize: 50,
-                          color: Colors.white,
-                          fontFamily: "Montserrat",
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      const Text(
-                        sescDescription,
-                        style: TextStyle(fontFamily: "Montserrat"),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          Get.bottomSheet(
-                            const Card(
-                              margin: EdgeInsets.all(8),
-                              color: cardBackgroundColor,
-                              child: Row(
-                                children: [
-                                  Text(
-                                    "As seen..",
-                                    style: TextStyle(
-                                      fontSize: 40,
-                                      fontFamily: "Montserrat",
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 300,
-                                    width: 300,
-                                    child: PaintClockModule(),
-                                  ),
-                                ],
+    final bool isMobile = MediaQuery.of(context).size.width < 800;
+
+    if (isMobile) {
+      return SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // Image.asset(
+            //   "assets/images/sesc.png",
+            //   width: MediaQuery.of(context).size.width * 0.9,
+            // ),
+            // const SizedBox(height: 20),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.9,
+              child: _buildContentCard(context),
+            ),
+          ],
+        ),
+      );
+    } else {
+      return SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              "assets/images/sesc.png",
+              width: 300,
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width / 2,
+              child: _buildContentCard(context),
+            ),
+          ],
+        ),
+      );
+    }
+  }
+
+  Widget _buildContentCard(BuildContext context) {
+    final bool isMobile = MediaQuery.of(context).size.width < 800;
+
+    return Card(
+      color: cardBackgroundColor,
+      child: Padding(
+        padding: EdgeInsets.all(isMobile ? 16.0 : 20.0),
+        child: Column(
+          children: [
+            Text(
+              "2D Art & Animations",
+              style: TextStyle(
+                fontSize: isMobile ? 32 : 50,
+                color: Colors.white,
+                fontFamily: "Montserrat",
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: isMobile ? 12 : 20),
+            const Text(
+              sescDescription,
+              style: TextStyle(fontFamily: "Montserrat"),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: isMobile ? 16 : 24),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(
+                  horizontal: isMobile ? 24 : 32,
+                  vertical: isMobile ? 12 : 16,
+                ),
+              ),
+              onPressed: () {
+                Get.bottomSheet(
+                  Card(
+                    margin: EdgeInsets.all(isMobile ? 8 : 16),
+                    color: cardBackgroundColor,
+                    child: isMobile
+                        ? const Column(
+                            children: [
+                              Text(
+                                "As seen..",
+                                style: TextStyle(
+                                  fontSize: 28,
+                                  fontFamily: "Montserrat",
+                                ),
                               ),
-                            ),
-                          );
-                        },
-                        child: const Text("Can I make art with code?"),
-                      ),
-                    ],
+                              SizedBox(height: 16),
+                              const SizedBox(
+                                height: 200,
+                                width: 200,
+                                child: PaintClockModule(),
+                              ),
+                            ],
+                          )
+                        : const Row(
+                            children: [
+                              Text(
+                                "As seen..",
+                                style: TextStyle(
+                                  fontSize: 40,
+                                  fontFamily: "Montserrat",
+                                ),
+                              ),
+                              SizedBox(width: 20),
+                              SizedBox(
+                                height: 300,
+                                width: 300,
+                                child: PaintClockModule(),
+                              ),
+                            ],
+                          ),
                   ),
-                )),
-          ),
-        ],
+                );
+              },
+              child: Text(
+                "Can I make art with code?",
+                style: TextStyle(fontSize: isMobile ? 14 : 16),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

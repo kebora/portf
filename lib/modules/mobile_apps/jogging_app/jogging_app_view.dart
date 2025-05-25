@@ -19,6 +19,20 @@ class JoggingAppView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isSmallScreen = MediaQuery.of(context).size.width < 800;
+
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (isSmallScreen) {
+          return _buildMobileLayout(context);
+        } else {
+          return _buildDesktopLayout(context);
+        }
+      },
+    );
+  }
+
+  Widget _buildDesktopLayout(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
@@ -30,55 +44,71 @@ class JoggingAppView extends StatelessWidget {
           ),
           SizedBox(
             width: MediaQuery.of(context).size.width / 2,
-            child: Card(
-                color: cardBackgroundColor,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      const Text(
-                        "Jogging App",
-                        style: TextStyle(
-                          fontSize: 50,
-                          color: Colors.white,
-                          fontFamily: "Montserrat",
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      const Text(
-                        joggingAppDescription,
-                        style: TextStyle(fontFamily: "Montserrat"),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          IconButton(
-                            tooltip: 'Source code',
-                            onPressed: () {
-                              js.context.callMethod('open', [_githubLink]);
-                            },
-                            icon: const Icon(FontAwesomeIcons.github),
-                          ),
-                          const Icon(Icons.verified,color: Colors.amber,),
-                          // IconButton(
-                          //   tooltip: 'App removed from Playstore!',
-                          //   onPressed: () {
-                          //     // js.context.callMethod('open', [_playstoreLink]);
-                          //   },
-                          //   icon: const Icon(FontAwesomeIcons.googlePlay),
-                          // ),
-                        ],
-                      ),
-                    ],
-                  ),
-                )),
+            child: _buildAppCard(),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildMobileLayout(BuildContext context) {
+    return Column(
+      children: [
+        Image.asset(
+          "assets/images/api1.png",
+          width: 250,
+        ),
+        const SizedBox(height: 20),
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.9,
+          child: _buildAppCard(),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildAppCard() {
+    return Card(
+      color: cardBackgroundColor,
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            const Text(
+              "Jogging App",
+              style: TextStyle(
+                fontSize: 40,
+                color: Colors.white,
+                fontFamily: "Montserrat",
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 16),
+            const Text(
+              joggingAppDescription,
+              style: TextStyle(fontFamily: "Montserrat"),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  tooltip: 'Source code',
+                  onPressed: () {
+                    js.context.callMethod('open', [_githubLink]);
+                  },
+                  icon: const Icon(FontAwesomeIcons.github),
+                ),
+                const SizedBox(width: 20),
+                const Tooltip(
+                  message: 'Archived',
+                  child: Icon(Icons.archive, color: Colors.amber),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

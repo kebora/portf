@@ -154,15 +154,15 @@ class CustomChipView extends StatelessWidget {
                 child: BlocBuilder<CustomChipsBloc, ChipStates>(
                   builder: (context, state) {
                     return Chip(
-                      label: const Text("Contact Me"),
-                      backgroundColor: state == ChipStates.contact
+                      label: const Text("Automation & APIs"),
+                      backgroundColor: state == ChipStates.automation
                           ? chipColorDarkTheme
                           : null,
                     );
                   },
                 ),
                 onTap: () => context.read<CustomChipsBloc>().add(
-                      ContactPressed(),
+                      AutomationPressed(),
                     ),
               ),
             ),
@@ -175,15 +175,36 @@ class CustomChipView extends StatelessWidget {
                 child: BlocBuilder<CustomChipsBloc, ChipStates>(
                   builder: (context, state) {
                     return Chip(
-                      label: const Text("Automation & APIs"),
-                      backgroundColor: state == ChipStates.automation
+                      label: const Text("Logos and Graphics"),
+                      backgroundColor: state == ChipStates.graphics
                           ? chipColorDarkTheme
                           : null,
                     );
                   },
                 ),
                 onTap: () => context.read<CustomChipsBloc>().add(
-                      AutomationPressed(),
+                      GraphicsPressed(),
+                    ),
+              ),
+            ),
+            const SizedBox(
+              width: 20,
+            ),
+            MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: GestureDetector(
+                child: BlocBuilder<CustomChipsBloc, ChipStates>(
+                  builder: (context, state) {
+                    return Chip(
+                      label: const Text("Contact Me"),
+                      backgroundColor: state == ChipStates.contact
+                          ? chipColorDarkTheme
+                          : null,
+                    );
+                  },
+                ),
+                onTap: () => context.read<CustomChipsBloc>().add(
+                      ContactPressed(),
                     ),
               ),
             ),

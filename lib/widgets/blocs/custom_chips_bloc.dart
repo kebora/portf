@@ -11,7 +11,8 @@ enum ChipStates {
   art,
   contact,
   automation,
-  latestapp
+  latestapp,
+  graphics,
 }
 
 //The events
@@ -34,6 +35,8 @@ class ContactPressed extends ModuleClickEvent {}
 class AutomationPressed extends ModuleClickEvent {}
 
 class LatestAppPressed extends ModuleClickEvent {}
+
+class GraphicsPressed extends ModuleClickEvent{}
 
 class CustomChipsBloc extends Bloc<ModuleClickEvent, ChipStates> {
   CustomChipsBloc() : super(ChipStates.mobileapp) {
@@ -71,6 +74,11 @@ class CustomChipsBloc extends Bloc<ModuleClickEvent, ChipStates> {
 
     on<LatestAppPressed>((event, emit) {
       emit(ChipStates.latestapp);
+    });
+
+
+    on<GraphicsPressed>((event,emit){
+      emit(ChipStates.graphics);
     });
   }
 }

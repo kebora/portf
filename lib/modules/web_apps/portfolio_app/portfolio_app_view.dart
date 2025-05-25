@@ -7,67 +7,86 @@ import 'dart:js' as js;
 const openPortfolio = '''
 This open portfolio also uses the MailChimp API to collect data from users.
 ''';
-// todo: upload project first
-const _githubLink =
-    "https://github.com/danielmsd1/opp/tree/main/portfolio-project";
+const _githubLink = "https://github.com/danielmsd1/opp/tree/main/portfolio-project";
 
-//
 class PortfolioAppView extends StatelessWidget {
   const PortfolioAppView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
+    final bool isMobile = MediaQuery.of(context).size.width < 800;
+
+    if (isMobile) {
+      return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            width: MediaQuery.of(context).size.width / 2,
-            child: Card(
-                color: cardBackgroundColor,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      const Text(
-                        "OPEN PORTFOLIO",
-                        style: TextStyle(
-                          fontSize: 50,
-                          color: Colors.white,
-                          fontFamily: "Montserrat",
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      const Text(
-                        openPortfolio,
-                        style: TextStyle(fontFamily: "Montserrat"),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          IconButton(
-                            onPressed: () {
-                              js.context.callMethod('open', [_githubLink]);
-                            },
-                            icon: const Icon(FontAwesomeIcons.github),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                )),
+            width: MediaQuery.of(context).size.width * 0.9,
+            child: _buildAppCard(isMobile),
           ),
+          const SizedBox(height: 20),
           Image.asset(
             "assets/images/wav_portfolio.png",
-            width: 500,
+            width: MediaQuery.of(context).size.width * 0.9,
           ),
         ],
+      );
+    } else {
+      return SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width / 2,
+              child: _buildAppCard(isMobile),
+            ),
+            Image.asset(
+              "assets/images/wav_portfolio.png",
+              width: 500,
+            ),
+          ],
+        ),
+      );
+    }
+  }
+
+  Widget _buildAppCard(bool isMobile) {
+    return Card(
+      color: cardBackgroundColor,
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Text(
+              "OPEN PORTFOLIO",
+              style: TextStyle(
+                fontSize: isMobile ? 32 : 50,
+                color: Colors.white,
+                fontFamily: "Montserrat",
+              ),
+            ),
+            const SizedBox(height: 16),
+            const Text(
+              openPortfolio,
+              style: TextStyle(fontFamily: "Montserrat"),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  onPressed: () {
+                    js.context.callMethod('open', [_githubLink]);
+                  },
+                  icon: const Icon(FontAwesomeIcons.github),
+                  iconSize: 28,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

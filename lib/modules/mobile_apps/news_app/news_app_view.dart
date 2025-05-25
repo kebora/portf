@@ -10,12 +10,9 @@ This is mostly the place I go to get a hint of what is happening around the Worl
 This app implements the Rewarded ads and the News API. Check out the code.
 ''';
 
-///
 const String _apkDownloadLink =
     "https://mega.nz/file/u6Y2BQjY#MhuA86DIU9trIGLkgtB54yEl9Uqothuf8t7eggVQD7w";
 
-///
-///
 const String _githubLink = "https://github.com/kebora/news";
 
 class NewsAppView extends StatelessWidget {
@@ -23,6 +20,20 @@ class NewsAppView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isSmallScreen = MediaQuery.of(context).size.width < 800;
+
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (isSmallScreen) {
+          return _buildMobileLayout(context);
+        } else {
+          return _buildDesktopLayout(context);
+        }
+      },
+    );
+  }
+
+  Widget _buildDesktopLayout(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
@@ -30,58 +41,80 @@ class NewsAppView extends StatelessWidget {
         children: [
           SizedBox(
             width: MediaQuery.of(context).size.width / 2,
-            child: Card(
-              color: cardBackgroundColor,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    const Text(
-                      "News App",
-                      style: TextStyle(
-                        fontSize: 50,
-                        color: Colors.white,
-                        fontFamily: "Montserrat",
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Text(
-                      _appDescription,
-                      style: TextStyle(fontFamily: "Montserrat"),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        IconButton(
-                          tooltip: 'Source code',
-                          onPressed: () {
-                            js.context.callMethod('open', [_githubLink]);
-                          },
-                          icon: const Icon(FontAwesomeIcons.github),
-                        ),
-                        IconButton(
-                          tooltip: 'Download APK',
-                          onPressed: (){
-                            js.context.callMethod('open', [_apkDownloadLink]);
-                          }, icon: const FaIcon(FontAwesomeIcons.download)),
-                        
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            child: _buildAppCard(),
           ),
           Image.asset(
             "assets/images/mav_news.png",
             width: 300,
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildMobileLayout(BuildContext context) {
+    return Column(
+      children: [
+        Image.asset(
+          "assets/images/mav_news.png",
+          width: 250,
+        ),
+        const SizedBox(height: 20),
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.9,
+          child: _buildAppCard(),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildAppCard() {
+    return Card(
+      color: cardBackgroundColor,
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            const Text(
+              "News App",
+              style: TextStyle(
+                fontSize: 40,
+                color: Colors.white,
+                fontFamily: "Montserrat",
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 16),
+            const Text(
+              _appDescription,
+              style: TextStyle(fontFamily: "Montserrat"),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  tooltip: 'Source code',
+                  onPressed: () {
+                    js.context.callMethod('open', [_githubLink]);
+                  },
+                  icon: const Icon(FontAwesomeIcons.github),
+                  iconSize: 28,
+                ),
+                const SizedBox(width: 20),
+                IconButton(
+                  tooltip: 'Download APK',
+                  onPressed: () {
+                    js.context.callMethod('open', [_apkDownloadLink]);
+                  },
+                  icon: const FaIcon(FontAwesomeIcons.download),
+                  iconSize: 28,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
