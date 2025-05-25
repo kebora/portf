@@ -6,11 +6,12 @@ import 'package:portf/colors.dart';
 import 'dart:js' as js;
 
 const gsdAppDescription = '''
- First interaction with flutter, thought it would be fun making a custom diary app.
+A simple diary app on the surface, but it has a lot of cool animations, and implementation that follows the best practices by the VGV (Very Good Ventures) Team. \n
+App made with Flutter, using firebase as backend, and bloc for state management. Assets drawn using Inkscape.
 ''';
-const String _playstoreLink =
-    "https://play.google.com/store/apps/details?id=com.simiyu.greensundiary";
+
 const String _githubLink = "https://github.com/kebora/greensundiary";
+const String _downloadLink = 'https://github.com/kebora/greensundiary/releases/tag/v1.0.7';
 
 class GSDAppView extends StatelessWidget {
   const GSDAppView({super.key});
@@ -61,16 +62,18 @@ class GSDAppView extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           IconButton(
+                            tooltip: 'Source code',
                             onPressed: () {
                               js.context.callMethod('open', [_githubLink]);
                             },
                             icon: const Icon(FontAwesomeIcons.github),
                           ),
                           IconButton(
+                            tooltip: 'Download Release',
                             onPressed: () {
-                              js.context.callMethod('open', [_playstoreLink]);
+                              js.context.callMethod('open', [_downloadLink]);
                             },
-                            icon: const Icon(FontAwesomeIcons.googlePlay),
+                            icon: const Icon(FontAwesomeIcons.download),
                           ),
                         ],
                       ),

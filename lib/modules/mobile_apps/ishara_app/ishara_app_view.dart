@@ -8,8 +8,9 @@ import '../../../colors.dart';
 
 const isharaAppDescription = '''
 Most people use mobile phones to shoot videos, but their level of control is limited when done over a distance, say while the device is appended on a tripod.
-This app allows the user to control video recording functionalities using custom hand gestures.
-Check out a more detailed description in GitHub link / test out the APK (Don't forget to try out Peek Mode )
+App allows the user to control video recording functionalities using custom hand gestures.\n
+App made with Java. A machine learning model by Mediapipe for gesture recognition was finetuned by custom data from HaGRID to result in 7 functional gesture classes.
+Check out a more detailed description in Github and try out the app.
 ''';
 
 const String _githubLink = "https://github.com/kebora/Ishara";
@@ -60,12 +61,14 @@ class IsharaAppView extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           IconButton(
+                            tooltip: 'Source code',
                             onPressed: () {
                               js.context.callMethod('open', [_githubLink]);
                             },
                             icon: const Icon(FontAwesomeIcons.github),
                           ),
                           IconButton(
+                            tooltip: 'Test on Playstore',
                             onPressed: () {
                               js.context.callMethod('open', [_playstoreLink]);
                             },

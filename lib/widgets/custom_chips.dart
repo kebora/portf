@@ -50,7 +50,7 @@ class CustomChipView extends StatelessWidget {
                 child: BlocBuilder<CustomChipsBloc, ChipStates>(
                   builder: (context, state) {
                     return Chip(
-                      label: const Text("Workplaces"),
+                      label: const Text("Desktop Apps"),
                       backgroundColor: state == ChipStates.companies
                           ? chipColorDarkTheme
                           : null,

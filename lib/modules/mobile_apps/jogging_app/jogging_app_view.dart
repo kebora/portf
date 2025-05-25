@@ -58,17 +58,20 @@ class JoggingAppView extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           IconButton(
+                            tooltip: 'Source code',
                             onPressed: () {
                               js.context.callMethod('open', [_githubLink]);
                             },
                             icon: const Icon(FontAwesomeIcons.github),
                           ),
-                          IconButton(
-                            onPressed: () {
-                              js.context.callMethod('open', [_playstoreLink]);
-                            },
-                            icon: const Icon(FontAwesomeIcons.googlePlay),
-                          ),
+                          const Icon(Icons.verified,color: Colors.amber,),
+                          // IconButton(
+                          //   tooltip: 'App removed from Playstore!',
+                          //   onPressed: () {
+                          //     // js.context.callMethod('open', [_playstoreLink]);
+                          //   },
+                          //   icon: const Icon(FontAwesomeIcons.googlePlay),
+                          // ),
                         ],
                       ),
                     ],

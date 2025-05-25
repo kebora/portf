@@ -238,20 +238,20 @@ class VideoTutorialsView extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          SizedBox(
-            child: ElevatedButton(
-              child: const Text(
-                "Discussing evolution of law in around 17 mins",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontFamily: "Montserrat",
-                ),
-              ),
-              onPressed: () {
-                playHostedVideo("h3eUrMfd6EM&t=349s");
-              },
-            ),
-          ),
+          // SizedBox(
+          //   child: ElevatedButton(
+          //     child: const Text(
+          //       "Discussing evolution of law in around 17 mins",
+          //       style: TextStyle(
+          //         fontSize: 20,
+          //         fontFamily: "Montserrat",
+          //       ),
+          //     ),
+          //     onPressed: () {
+          //       playHostedVideo("h3eUrMfd6EM&t=349s");
+          //     },
+          //   ),
+          // ),
           const SizedBox(
             height: 10,
           ),

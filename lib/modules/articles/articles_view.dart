@@ -64,11 +64,11 @@ class ArticlesView extends StatelessWidget {
             link:
                 "https://medium.com/@danilosimiyu/understand-apis-in-express-js-part-1-usage-8f159eacabe6",
           ),
-          _AView(
-            title: "Green Certification approach in Kenya",
-            link:
-                "https://medium.com/@danilosimiyu/green-certification-approach-in-kenya-507bd5bec90b",
-          ),
+          // _AView(
+          //   title: "Green Certification approach in Kenya",
+          //   link:
+          //       "https://medium.com/@danilosimiyu/green-certification-approach-in-kenya-507bd5bec90b",
+          // ),
         ],
       ),
     );

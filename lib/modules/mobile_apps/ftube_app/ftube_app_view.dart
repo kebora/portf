@@ -5,8 +5,7 @@ import 'package:portf/colors.dart';
 import 'dart:js' as js;
 
 const flutterTubeAppDescription = '''
-This app uses the YouTube API to pick flutter content from 3 different channels I like.\n
-This is cool, but could be much better. 
+This app uses the YouTube API to pick flutter content from 3 different channels I like.
 ''';
 const String _githubLink = "https://github.com/kebora/fluttertube";
 const String _playstoreLink =
@@ -65,17 +64,19 @@ class FTubeAppView extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           IconButton(
+                            tooltip: 'Source code',
                             onPressed: () {
                               js.context.callMethod('open', [_githubLink]);
                             },
                             icon: const Icon(FontAwesomeIcons.github),
                           ),
-                          IconButton(
-                            onPressed: () {
-                              js.context.callMethod('open', [_playstoreLink]);
-                            },
-                            icon: const Icon(FontAwesomeIcons.googlePlay),
-                          ),
+                          const Icon(Icons.verified,color: Colors.amber,)
+                          // IconButton(
+                          //   onPressed: () {
+                          //     js.context.callMethod('open', [_playstoreLink]);
+                          //   },
+                          //   icon: const Icon(FontAwesomeIcons.googlePlay),
+                          // ),
                         ],
                       ),
                     ],

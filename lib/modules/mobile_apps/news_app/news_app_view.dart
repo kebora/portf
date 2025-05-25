@@ -58,18 +58,18 @@ class NewsAppView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         IconButton(
+                          tooltip: 'Source code',
                           onPressed: () {
                             js.context.callMethod('open', [_githubLink]);
                           },
                           icon: const Icon(FontAwesomeIcons.github),
                         ),
-                        ElevatedButton.icon(
-                          onPressed: () {
+                        IconButton(
+                          tooltip: 'Download APK',
+                          onPressed: (){
                             js.context.callMethod('open', [_apkDownloadLink]);
-                          },
-                          icon: const Icon(Icons.download),
-                          label: const Text("Download APK"),
-                        )
+                          }, icon: const FaIcon(FontAwesomeIcons.download)),
+                        
                       ],
                     ),
                   ],

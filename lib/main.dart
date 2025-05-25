@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:portf/modules/articles/articles_view.dart';
 import 'package:portf/modules/arts/arts_view.dart';
 import 'package:portf/modules/automation/automation_view.dart';
-import 'package:portf/modules/company/companies_view.dart';
+import 'package:portf/modules/desktop_apps/companies_view.dart';
 import 'package:portf/modules/contact/contact_view.dart';
 import 'package:portf/modules/mobile_apps/mobile_apps_view.dart';
 import 'package:portf/modules/video_tutorials/video_tutorials_view.dart';

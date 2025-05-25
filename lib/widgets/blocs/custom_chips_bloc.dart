@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 //The states
 enum ChipStates {
   mobileapp,
+  desktop,
   webapp,
   companies,
   videoTutorials,
