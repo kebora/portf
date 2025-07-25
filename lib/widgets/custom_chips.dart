@@ -196,6 +196,27 @@ class CustomChipView extends StatelessWidget {
                 child: BlocBuilder<CustomChipsBloc, ChipStates>(
                   builder: (context, state) {
                     return Chip(
+                      label: const Text("Request Data Deletion"),
+                      backgroundColor: state == ChipStates.accountdeletion
+                          ? chipColorDarkTheme
+                          : null,
+                    );
+                  },
+                ),
+                onTap: () => context.read<CustomChipsBloc>().add(
+                      AccountDeletionPressed(),
+                    ),
+              ),
+            ),
+            const SizedBox(
+              width: 20,
+            ),
+            MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: GestureDetector(
+                child: BlocBuilder<CustomChipsBloc, ChipStates>(
+                  builder: (context, state) {
+                    return Chip(
                       label: const Text("Contact Me"),
                       backgroundColor: state == ChipStates.contact
                           ? chipColorDarkTheme

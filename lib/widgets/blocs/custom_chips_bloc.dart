@@ -13,6 +13,7 @@ enum ChipStates {
   automation,
   latestapp,
   graphics,
+  accountdeletion,
 }
 
 //The events
@@ -31,6 +32,8 @@ class ArticlesPressed extends ModuleClickEvent {}
 class ArtsPressed extends ModuleClickEvent {}
 
 class ContactPressed extends ModuleClickEvent {}
+
+class AccountDeletionPressed extends ModuleClickEvent{}
 
 class AutomationPressed extends ModuleClickEvent {}
 
@@ -79,6 +82,10 @@ class CustomChipsBloc extends Bloc<ModuleClickEvent, ChipStates> {
 
     on<GraphicsPressed>((event,emit){
       emit(ChipStates.graphics);
+    });
+
+    on<AccountDeletionPressed>((event,emit){
+      emit(ChipStates.accountdeletion);
     });
   }
 }

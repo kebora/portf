@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:portf/modules/account_deletion/account_deletion_view.dart';
 import 'package:portf/modules/articles/articles_view.dart';
 import 'package:portf/modules/arts/arts_view.dart';
 import 'package:portf/modules/automation/automation_view.dart';
@@ -73,6 +74,8 @@ class HomePage extends StatelessWidget {
                                         ? GraphicsView()
                                         : state == ChipStates.contact
                                             ? const ContactView()
+                                           : state == ChipStates.accountdeletion
+                                            ? const AccountDeletionView()  
                                             : const CompaniesView();
           }),
         ],
